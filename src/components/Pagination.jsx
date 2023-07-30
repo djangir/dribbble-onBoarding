@@ -22,7 +22,7 @@ function Pagination(props) {
   };
 
   const calculateWidth = () => {
-    return ((activePage + 1) / totalPages) * 100 + "%";
+    return Math.floor(((activePage + 1) / totalPages) * 100) + "%";
   };
 
   return (
