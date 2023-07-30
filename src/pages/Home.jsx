@@ -23,14 +23,14 @@ function Home() {
     {
       heading: "Welcome! First things first...",
       subHeading: "You can always change them later.",
-      input1: {
+      input: [{
         label: "Full Name",
         placeholder: "Steve Jobs",
-      },
-      input2: {
+      }, 
+      {
         label: "Display Name",
         placeholder: "Steve",
-      },
+      }],
       button: {
         onclick: handleBtnClick,
       },
@@ -38,16 +38,15 @@ function Home() {
     {
       heading: "Let's set up a home for all your work",
       subHeading: "You can always create another workspace later.",
-      input1: {
+      input:[ {
         label: "Workspace Name",
         placeholder: "Eden",
-      },
-      input2: {
+      },  {
         label: "Workspace URL",
         isOptional: true,
         placeholder: "Example",
         boxInput: "www.eden.com/",
-      },
+      }],
       button: {
         onclick: handleBtnClick,
       },
@@ -89,6 +88,7 @@ function Home() {
       const isActive = activeCard == index ? "activeCard" : "";
       return (
         <CardBox
+        key={index}
           onclick={() => {
             setActiveCard(index);
           }}
@@ -98,6 +98,13 @@ function Home() {
       );
     });
   };
+
+const renderInputs =(inputs)=>{
+  return inputs.map((item,index)=>{
+    return (
+    <InputBox key={index} {...item}  />)
+  })
+}
 
   return (
     <div
@@ -110,7 +117,7 @@ function Home() {
       </div>
 
       <Pagination
-        totalPages={4}
+        totalPages={pageJson.length}
         activePage={page}
         page={page}
         setPage={setPage}
@@ -121,26 +128,10 @@ function Home() {
         subTitle={pageJson[page].subHeading}
       />
 
-      {pageJson[page].input1 && (
-        <InputBox
-          label={pageJson[page].input1.label}
-          placeholder={pageJson[page].input1.placeholder}
-        />
-      )}
-
-      {pageJson[page].input2 && (
-        <InputBox
-          label={pageJson[page].input2.label}
-          isOptional={pageJson[page].input2.isOptional}
-          placeholder={pageJson[page].input2.placeholder}
-          boxInput={pageJson[page].input2.boxInput}
-        />
-      )}
-
+      {pageJson[page].input && renderInputs(pageJson[page].input)}
       {pageJson[page].card && (
         <div className="d-md-flex gap-4">{renderCard(pageJson[page].card)}</div>
       )}
-
       {pageJson[page].done && <DoneCard {...pageJson[page].done} />}
 
       <CommonButton

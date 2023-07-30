@@ -5,17 +5,17 @@ function InputBox(props) {
 
   if (boxInput) {
     return (
-      <div class="input-group mb-3">
-        <label for="basic-url">
+      <div className="input-group mb-3">
+        <label htmlFor="basic-url">
           {label} {isOptional && "(optional)"}
         </label>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">{boxInput}</span>
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text">{boxInput}</span>
           </div>
           <input
             {...props}
-            class="form-control"
+            className="form-control"
             aria-describedby="basic-addon3"
           />
         </div>
@@ -24,8 +24,8 @@ function InputBox(props) {
   }
 
   return (
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" className="form-label">
+    <div className="mb-3">
+      <label htmlFor="exampleFormControlInput1" className="form-label">
         {label} {isOptional && "(optional)"}
       </label>
       <input className="form-control" {...props} />

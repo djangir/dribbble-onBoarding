@@ -10,6 +10,7 @@ function Pagination(props) {
       let activeClass = activePage >= index ? "activePage" : "";
       return (
         <div
+        key={index}
           className={`px-2 pageBox ${activeClass}`}
           onClick={() => {
             setPage(index);
