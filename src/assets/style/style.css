@@ -1,0 +1,76 @@
+.activePage {
+    background: hsl(249, 75%, 60%) !important;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    border: unset !important;
+}
+
+
+.pageline {
+    width: 100%;
+    background: #b6b6b6;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    z-index: -2;
+}
+
+.relative {
+    position: relative;
+}
+
+.paginationDiv {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.pageBox {
+    background: white;
+    border: 1px solid #5f5151;
+    border-radius: 100px;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.pagelineFill {
+    background: #654de5 !important;
+    height: 2px;
+    position: absolute;
+    z-index: -1;
+
+}
+
+.cardBox {
+    width: 100%;
+    min-height: 100px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    border: 1.5px solid gray;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.activeCard {
+    border: 1.5px solid hsl(249, 75%, 60%) !important;
+}
+
+.btn-primary {
+    background: hsl(249, 75%, 60%) !important;
+
+}
+
+.fs-7 {
+    font-size: 14px;
+}
+
+.gray {
+    color: gray;
+}
